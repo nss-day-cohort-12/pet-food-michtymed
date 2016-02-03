@@ -1,6 +1,3 @@
-
-
-
 var dogRequest = new XMLHttpRequest();
 
 dogRequest.addEventListener("progress", dogFoodChunksArrive);
@@ -8,6 +5,16 @@ dogRequest.addEventListener("error", dogFoodXHRFails);
 dogRequest.addEventListener("load", dogFoodLoaded);
 dogRequest.open("GET", "dogFood.json");
 dogRequest.send();
+
+
+var catRequest = new XMLHttpRequest();
+
+catRequest.addEventListener("progress", catFoodChunksArrive);
+catRequest.addEventListener("error", catFoodXHRFails);
+catRequest.addEventListener("load", catFoodLoaded);
+catRequest.open("GET", "catFood.json");
+catRequest.send();
+
 
 function dogFoodXHRFails (xhrEvent) {
 	console.log("An error occured while transferring the...");
@@ -59,20 +66,74 @@ function dogFoodLoaded () {
 		contentEl.innerHTML = dogString;
 	}
 
-		// data = {}
-		// data.dog_brands = []
-		// data.dog_brands[0] = {}
-		// console.log(data.dog_brands[0].name);
-		// data.dog_brands[0].name = "Chuck wagon"
-		// data.dog_brands[0].types = []
-		// data.dog_brands[0].types[0] = {}
-		// data.dog_brands[0].types[0].type = "All_natural"
-		// console.log(data.dog_brands[0].types[0]);
-		// data.dog_brands[0].types[0].volumes = []
-		// data.dog_brands[0].types[0].volumes[0] = {}
-		// data.dog_brands[0].types[0].volumes[0].name = "32oz"
-		// data.dog_brands[0].types[0].volumes[0].price = 9.99
-		// data.dog_brands[0].types[0].volumes[1].name = "64oz"
-		// data.dog_brands[0].types[0].volumes[1].price = 17.99
+function catFoodXHRFails (xhrEvent) {
+	console.log("An error occured while transferring the...");
+};
+
+function catFoodChunksArrive (xhrEvent) {
+
+}
+
+function catFoodLoaded () {
+		var contentEl = document.getElementById("cat-food-div");
+		console.log(contentEl);
+		var catString = "";
+		console.log(this.responseText);
+		var data = JSON.parse(this.responseText);
+		console.log(data);
+
+		var catBrandArray = data.cat_brands;
+		for (var i = 0; i < catBrandArray.length; i++) {
+			var brandsObject = catBrandArray[i];
+			var catBrand = brandsObject.name;
+			console.log(catBrand);
+			catString += `<div class="cat-card"><h2>${catBrand}</h2>`
+			var breedArray = brandsObject.breeds;	
+			catString += `<h4>For the following breeds:</h4><ul>`;
+				for (var j = 0; j < breedArray.length; j++){
+					catString += `<li>${breedArray[j]}</li>`;
+				}
+			catString += `</ul>`;	
+			var brandTypesArray = brandsObject.types;
+			console.log(brandTypesArray);
+				for (var k = 0; k< brandTypesArray.length; k++) {
+					var brandType = brandTypesArray[k].type;
+					console.log(brandType);
+					catString += `<h4>${brandType}</h4><ul>`
+					var volumesArray = brandTypesArray[k].volumes;
+					console.log(volumesArray);
+						for (var l = 0; l < volumesArray.length; l++) {
+							var volumeName = volumesArray[l].name;
+							console.log(volumeName);
+							catString += `<li>${volumeName} for `;
+							var volumePrice = volumesArray[l].price;
+							console.log(volumePrice);
+							catString += `$${volumePrice}</li>`
+						}
+				catString += `</ul>`;
+				}
+			catString += `</div>`;	
+		}
+		contentEl.innerHTML = catString;
+	}
 
 
+
+
+
+
+// data = {}
+// data.dog_brands = []
+// data.dog_brands[0] = {}
+// console.log(data.dog_brands[0].name);
+// data.dog_brands[0].name = "Chuck wagon"
+// data.dog_brands[0].types = []
+// data.dog_brands[0].types[0] = {}
+// data.dog_brands[0].types[0].type = "All_natural"
+// console.log(data.dog_brands[0].types[0]);
+// data.dog_brands[0].types[0].volumes = []
+// data.dog_brands[0].types[0].volumes[0] = {}
+// data.dog_brands[0].types[0].volumes[0].name = "32oz"
+// data.dog_brands[0].types[0].volumes[0].price = 9.99
+// data.dog_brands[0].types[0].volumes[1].name = "64oz"
+// data.dog_brands[0].types[0].volumes[1].price = 17.99
