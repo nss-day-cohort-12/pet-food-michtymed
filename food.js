@@ -50,7 +50,7 @@ function dogFoodLoaded () {
 			var brandsObject = object;
 			var dogBrand = brandsObject.name;
 			console.log(dogBrand);
-			dogString += `<div class="dog-card"><h2>${dogBrand}</h2>`
+			dogString += `<div class="dog-card col-md-3 col-md-offset-2"><h2>${dogBrand}</h2>`
 			var brandTypesArray = brandsObject.types;
 			console.log(brandTypesArray);
 			
@@ -104,7 +104,7 @@ function catFoodLoaded () {
 			var brandsObject = object;
 			var catBrand = brandsObject.name;
 			console.log(catBrand);
-			catString += `<div class="cat-card"><h2>${catBrand}</h2>`
+			catString += `<div class="cat-card col-md-3 col-md-offset-2"><h2>${catBrand}</h2>`
 			var breedArray = brandsObject.breeds;	
 			catString += `<h4>For the following breeds:</h4><ul>`;
 		

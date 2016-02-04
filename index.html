@@ -3,14 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Pet Food</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="petFood.css">
 </head>
 <body>
+	<ul class="nav nav-tabs">
+  <li role="presentation" class="active"id="home-button"><a href="#">Home</a></li>
+  <li role="presentation" id="dog-button"><a href="#">Dog Food</a></li>
+  <li role="presentation" id="cat-button"><a href="#">Cat Food</a></li>
+</ul>
+	<div id="home-div" class="visible">
+		<h1>ACME, Inc.</h1>
+	</div>
 	
-	<div id="dog-food-div"></div>
+	<div id="dog-food-div" class="row invisible"></div>
 
-	<div id="cat-food-div"></div>
+	<div id="cat-food-div" class="row invisible"></div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script src="food.js"></script>
+<script src="events.js"></script>
 </body>
 </html>
