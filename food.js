@@ -33,7 +33,6 @@ function dogFoodLoaded () {
 		var contentEl = document.getElementById("dog-food-div");
 		console.log(contentEl);
 		var dogString = "";
-		console.log(this.responseText);
 		var data = JSON.parse(this.responseText);
 		console.log(data);
 		
@@ -46,33 +45,37 @@ function dogFoodLoaded () {
 		}
 
 		var dogBrandArray = data.dog_brands;
-		for (var i = 0; i < dogBrandArray.length; i++) {
-			var brandsObject = dogBrandArray[i];
+		
+		dogBrandArray.forEach(function(object){
+			var brandsObject = object;
 			var dogBrand = brandsObject.name;
 			console.log(dogBrand);
 			dogString += `<div class="dog-card"><h2>${dogBrand}</h2>`
 			var brandTypesArray = brandsObject.types;
 			console.log(brandTypesArray);
-				for (var j = 0; j< brandTypesArray.length; j++) {
-					var brandType = brandTypesArray[j].type;
-					console.log(brandType);
-					brandType = capitalizeFirstLetter(brandType);
-					brandType = replaceUnderscore(brandType);
-					dogString += `<h4>${brandType}</h4><ul>`
-					var volumesArray = brandTypesArray[j].volumes;
-					console.log(volumesArray);
-						for (var k = 0; k < volumesArray.length; k++) {
-							var volumeName = volumesArray[k].name;
-							console.log(volumeName);
-							dogString += `<li>${volumeName} for `;
-							var volumePrice = volumesArray[k].price;
-							console.log(volumePrice);
-							dogString += `$${volumePrice}</li>`
-						}
+			
+			brandTypesArray.forEach(function(object){
+				var brandType = object.type;
+				console.log(brandType);
+				brandType = capitalizeFirstLetter(brandType);
+				brandType = replaceUnderscore(brandType);
+				dogString += `<h4>${brandType}</h4><ul>`
+				var volumesArray = object.volumes;
+				console.log(volumesArray);
+
+				volumesArray.forEach(function(object){
+					var volumeName = object.name;
+					console.log(volumeName);
+					dogString += `<li>${volumeName} for `;
+					var volumePrice = object.price;
+					console.log(volumePrice);
+					dogString += `$${volumePrice}</li>`
+				
+				})
 				dogString += `</ul>`;
-				}
+			})	
 			dogString += `</div>`;	
-		}
+		});		
 		contentEl.innerHTML = dogString;
 	}
 
@@ -88,7 +91,6 @@ function catFoodLoaded () {
 		var contentEl = document.getElementById("cat-food-div");
 		console.log(contentEl);
 		var catString = "";
-		console.log(this.responseText);
 		var data = JSON.parse(this.responseText);
 		console.log(data);
 
@@ -97,43 +99,44 @@ function catFoodLoaded () {
 		}
 
 		var catBrandArray = data.cat_brands;
-		for (var i = 0; i < catBrandArray.length; i++) {
-			var brandsObject = catBrandArray[i];
+		
+		catBrandArray.forEach(function(object){
+			var brandsObject = object;
 			var catBrand = brandsObject.name;
 			console.log(catBrand);
 			catString += `<div class="cat-card"><h2>${catBrand}</h2>`
 			var breedArray = brandsObject.breeds;	
 			catString += `<h4>For the following breeds:</h4><ul>`;
-				for (var j = 0; j < breedArray.length; j++){
-					catString += `<li>${breedArray[j]}</li>`;
-				}
+		
+			breedArray.forEach(function(breed){
+					catString += `<li>${breed}</li>`;
+			})
 			catString += `</ul>`;	
 			var brandTypesArray = brandsObject.types;
 			console.log(brandTypesArray);
-				for (var k = 0; k< brandTypesArray.length; k++) {
-					var brandType = brandTypesArray[k].type;
-					console.log(brandType);
-					brandType = capitalizeFirstLetter(brandType);
-					catString += `<h4>${brandType}</h4><ul>`
-					var volumesArray = brandTypesArray[k].volumes;
-					console.log(volumesArray);
-						for (var l = 0; l < volumesArray.length; l++) {
-							var volumeName = volumesArray[l].name;
-							console.log(volumeName);
-							catString += `<li>${volumeName} for `;
-							var volumePrice = volumesArray[l].price;
-							console.log(volumePrice);
-							catString += `$${volumePrice}</li>`
-						}
+		
+			brandTypesArray.forEach(function(object){
+				var brandType = object.type;
+				console.log(brandType);
+				brandType = capitalizeFirstLetter(brandType);
+				catString += `<h4>${brandType}</h4><ul>`
+				var volumesArray = object.volumes;
+				console.log(volumesArray);
+		
+				volumesArray.forEach(function(object){
+					var volumeName = object.name;
+					console.log(volumeName);
+					catString += `<li>${volumeName} for `;
+					var volumePrice = object.price;
+					console.log(volumePrice);
+					catString += `$${volumePrice}</li>`
+				})
 				catString += `</ul>`;
-				}
+			})
 			catString += `</div>`;	
-		}
+		});
 		contentEl.innerHTML = catString;
 	}
-
-
-
 
 
 // data = {}
