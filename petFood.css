@@ -1,0 +1,28 @@
+div#dog-food-div, div#cat-food-div {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+div.cat-card, div.dog-card {
+	border: 2px solid black;
+	padding: 10px;
+	box-sizing: border-box;
+	margin: 20px 5%;
+	width: 30%;
+	display: inline-block;
+}
+
+div.cat-card {
+	height: 450px;
+}
+
+div.dog-card {
+	height: 300px;
+}
+
+ul {
+	text-align: left;
+	list-style-type: none;
+}
