@@ -36,6 +36,14 @@ function dogFoodLoaded () {
 		console.log(this.responseText);
 		var data = JSON.parse(this.responseText);
 		console.log(data);
+		
+		function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+		}
+
+		function replaceUnderscore (string) {
+			return string.replace("_", " ");
+		}
 
 		var dogBrandArray = data.dog_brands;
 		for (var i = 0; i < dogBrandArray.length; i++) {
@@ -48,6 +56,8 @@ function dogFoodLoaded () {
 				for (var j = 0; j< brandTypesArray.length; j++) {
 					var brandType = brandTypesArray[j].type;
 					console.log(brandType);
+					brandType = capitalizeFirstLetter(brandType);
+					brandType = replaceUnderscore(brandType);
 					dogString += `<h4>${brandType}</h4><ul>`
 					var volumesArray = brandTypesArray[j].volumes;
 					console.log(volumesArray);
@@ -82,6 +92,10 @@ function catFoodLoaded () {
 		var data = JSON.parse(this.responseText);
 		console.log(data);
 
+		function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+		}
+
 		var catBrandArray = data.cat_brands;
 		for (var i = 0; i < catBrandArray.length; i++) {
 			var brandsObject = catBrandArray[i];
@@ -99,6 +113,7 @@ function catFoodLoaded () {
 				for (var k = 0; k< brandTypesArray.length; k++) {
 					var brandType = brandTypesArray[k].type;
 					console.log(brandType);
+					brandType = capitalizeFirstLetter(brandType);
 					catString += `<h4>${brandType}</h4><ul>`
 					var volumesArray = brandTypesArray[k].volumes;
 					console.log(volumesArray);
@@ -116,7 +131,6 @@ function catFoodLoaded () {
 		}
 		contentEl.innerHTML = catString;
 	}
-
 
 
 
