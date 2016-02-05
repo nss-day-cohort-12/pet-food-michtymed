@@ -3,80 +3,276 @@
     {
       "name": "Purrina",
       "breeds": [
-        "Siamese",
-        "Bengal",
-        "Snowshoe",
-        "Munchkin"
-      ],
-      "types": [
         {
-          "type": "kitten",
-          "volumes": [
+          "name": "Siamese",
+          "types": [
             {
-              "name": "20oz",
-              "price": 19.99
+              "type": "kitten",
+              "volumes": [
+                {
+                  "name": "20oz",
+                  "price": 19.99
+                },
+                {
+                  "name": "32oz",
+                  "price": 26.99
+                },
+                {
+                  "name": "64oz",
+                  "price": 34.99
+                }
+              ]
             },
             {
-              "name": "32oz",
-              "price": 26.99
-            },
-            {
-              "name": "64oz",
-              "price": 34.99
-            }
+              "type": "elite",
+              "volumes": [
+                {
+                  "name": "20oz",
+                  "price": 24.99
+                },
+                {
+                  "name": "40oz",
+                  "price": 47.99
+                 }
+              ]
+            }        
           ]
         },
         {
-          "type": "elite",
-          "volumes": [
+          "name": "Bengal",
+          "types": [
             {
-              "name": "20oz",
-              "price": 24.99
+              "type": "kitten",
+              "volumes": [
+                {
+                  "name": "20oz",
+                  "price": 19.99
+                },
+                {
+                  "name": "32oz",
+                  "price": 26.99
+                },
+                {
+                  "name": "64oz",
+                  "price": 34.99
+                }
+              ]
             },
             {
-              "name": "40oz",
-              "price": 47.99
-            }
+              "type": "elite",
+              "volumes": [
+                {
+                  "name": "20oz",
+                  "price": 24.99
+                },
+                {
+                  "name": "40oz",
+                  "price": 47.99
+                 }
+              ]
+            }        
+          ]
+        },
+        {
+          "name": "Snowshoe",
+          "types": [
+            {
+              "type": "kitten",
+              "volumes": [
+                {
+                  "name": "20oz",
+                  "price": 19.99
+                },
+                {
+                  "name": "32oz",
+                  "price": 26.99
+                },
+                {
+                  "name": "64oz",
+                  "price": 34.99
+                }
+              ]
+            },
+            {
+              "type": "elite",
+              "volumes": [
+                {
+                  "name": "20oz",
+                  "price": 24.99
+                },
+                {
+                  "name": "40oz",
+                  "price": 47.99
+                 }
+              ]
+            }        
+          ]
+        },
+        {
+          "name": "Munchkin",
+          "types": [
+            {
+              "type": "kitten",
+              "volumes": [
+                {
+                  "name": "20oz",
+                  "price": 19.99
+                },
+                {
+                  "name": "32oz",
+                  "price": 26.99
+                },
+                {
+                  "name": "64oz",
+                  "price": 34.99
+                }
+              ]
+            },
+            {
+              "type": "elite",
+              "volumes": [
+                {
+                  "name": "20oz",
+                  "price": 24.99
+                },
+                {
+                  "name": "40oz",
+                  "price": 47.99
+                 }
+              ]
+            }        
           ]
         }
       ]
-    },
+    },    
     {
       "name": "Meow Meal",
       "breeds": [
-        "Manx",
-        "Egyptian Mau",
-        "Himilayan",
-        "Rag Doll"
-      ],
-      "types": [
         {
-          "type": "kitten",
-          "volumes": [
+          "name": "Manx",
+          "types": [
             {
-              "name": "24oz",
-              "price": 19.99
+              "type": "Kitten",
+              "volumes": [
+                {
+                  "name": "24oz",
+                  "price": 19.99
+                },
+                {
+                  "name": "48oz",
+                  "price": 34.99
+                }
+              ]
             },
             {
-              "name": "48oz",
-              "price": 34.99
-            }
+              "type": "Adult",
+              "volumes": [
+                {
+                  "name": "28oz",
+                  "price": 22.99
+                },
+                {
+                  "name": "56oz",
+                  "price": 40.99
+                 }
+              ]
+            }        
           ]
         },
         {
-          "type": "adult",
-          "volumes": [
+          "name": "Egyptian Mau",
+          "types": [
             {
-              "name": "28oz",
-              "price": 22.99
+              "type": "Kitten",
+              "volumes": [
+                {
+                  "name": "24oz",
+                  "price": 19.99
+                },
+                {
+                  "name": "48oz",
+                  "price": 34.99
+                }
+              ]
             },
             {
-              "name": "56oz",
-              "price": 40.99
-            }
+              "type": "Adult",
+              "volumes": [
+                {
+                  "name": "28oz",
+                  "price": 22.99
+                },
+                {
+                  "name": "56oz",
+                  "price": 40.99
+                 }
+              ]
+            }        
+          ]
+        },
+        {
+          "name": "Himalayan",
+          "types": [
+            {
+              "type": "Kitten",
+              "volumes": [
+                {
+                  "name": "24oz",
+                  "price": 19.99
+                },
+                {
+                  "name": "48oz",
+                  "price": 34.99
+                }
+              ]
+            },
+            {
+              "type": "Adult",
+              "volumes": [
+                {
+                  "name": "28oz",
+                  "price": 22.99
+                },
+                {
+                  "name": "56oz",
+                  "price": 40.99
+                 }
+              ]
+            }        
+          ]
+        },
+        {
+          "name": "Rag Doll",
+          "types": [
+            {
+              "type": "Kitten",
+              "volumes": [
+                {
+                  "name": "24oz",
+                  "price": 19.99
+                },
+                {
+                  "name": "48oz",
+                  "price": 34.99
+                }
+              ]
+            },
+            {
+              "type": "Adult",
+              "volumes": [
+                {
+                  "name": "28oz",
+                  "price": 22.99
+                },
+                {
+                  "name": "56oz",
+                  "price": 40.99
+                 }
+              ]
+            }        
           ]
         }
       ]
-    }
+    } 
   ]
 }
